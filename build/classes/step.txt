@@ -1,0 +1,13 @@
+import database : 
+--folder db -> penggajian.sql
+
+Login Aplikasi 
+--user & pass : admin
+
+untuk menampilkan/ cetak Laporan memerlukan iReport
+
+lalu tambahkan komponen jCalendar, commons all, jasperreport : 
+--klik kanan libraries -> add JAR/Folder -> pilih folder src/comp
+
+tambahkan Swing jCalendar, jDateChooser : 
+--klik kanan Swing -> palete Manager ->add from JAR -> src/comp/jCalendar.jar ->lalu pilih jCalendar dan jDateChooser

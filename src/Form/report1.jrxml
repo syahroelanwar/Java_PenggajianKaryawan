@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0c9f12a5-1f83-4ae8-b844-d88391f32b81">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     karyawan.`karyawanID` AS karyawan_karyawanID,
+     karyawan.`nama` AS karyawan_nama,
+     karyawan.`tgl_lahir` AS karyawan_tgl_lahir,
+     karyawan.`jk` AS karyawan_jk,
+     karyawan.`alamat` AS karyawan_alamat,
+     karyawan.`noHP` AS karyawan_noHP,
+     karyawan.`jabatan` AS karyawan_jabatan,
+     karyawan.`golongan` AS karyawan_golongan
+FROM
+     `karyawan` karyawan]]>
+	</queryString>
+	<field name="karyawan_karyawanID" class="java.lang.Integer"/>
+	<field name="karyawan_nama" class="java.lang.String"/>
+	<field name="karyawan_tgl_lahir" class="java.sql.Date"/>
+	<field name="karyawan_jk" class="java.lang.String"/>
+	<field name="karyawan_alamat" class="java.lang.String"/>
+	<field name="karyawan_noHP" class="java.lang.String"/>
+	<field name="karyawan_jabatan" class="java.lang.String"/>
+	<field name="karyawan_golongan" class="java.lang.String"/>
+	<group name="karyawan_karyawanID">
+		<groupExpression><![CDATA[$F{karyawan_karyawanID}]]></groupExpression>
+		<groupHeader>
+			<band height="37">
+				<frame>
+					<reportElement mode="Opaque" x="-21" y="7" width="843" height="24" forecolor="#B89F7D" backcolor="#F2EBDF" uuid="cff39388-1040-4114-b008-532a59a01aed"/>
+					<rectangle>
+						<reportElement mode="Opaque" x="21" y="0" width="36" height="24" backcolor="#736343" uuid="41230c89-b66e-4888-8011-9c11619eb7d5"/>
+						<graphicElement>
+							<pen lineWidth="0.0"/>
+						</graphicElement>
+					</rectangle>
+					<textField>
+						<reportElement style="SubTitle" x="68" y="0" width="755" height="24" forecolor="#736343" uuid="a1b0f43c-44e9-441f-b1b4-78f5b10722fa"/>
+						<textElement>
+							<font isBold="true"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$F{karyawan_karyawanID}]]></textFieldExpression>
+					</textField>
+				</frame>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="6"/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="136" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="172" y="0" width="459" height="62" uuid="b64718a7-57a6-44b2-91d7-cd1f49b0f1ac"/>
+				<textElement verticalAlignment="Middle">
+					<font pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Laporan Karyawan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="295" y="62" width="196" height="22" uuid="a869b3ac-953b-4264-bfee-f3f0f5dc958d"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[PT. Nama Perusahaan ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="159" y="84" width="500" height="22" uuid="5815714d-9b74-47df-8f13-497b876b70ef"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Jl.Nama Jalan No. jl Tlp : 9999-8888-7777 Email : abc@gmail.com]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="802" height="1" uuid="7dc3daa0-f7a9-4b45-a0e5-d3b549194bb9"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="0" width="114" height="15" forecolor="#736343" uuid="c2c751aa-6aca-4647-b9ec-9e9f5c7c6c8e"/>
+				<text><![CDATA[Nama]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="114" y="0" width="114" height="15" forecolor="#736343" uuid="c14c528e-d7d2-4b97-b3aa-62f9b086442a"/>
+				<text><![CDATA[Tgl Lahir]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="228" y="0" width="35" height="15" forecolor="#736343" uuid="70c1c58a-25fb-4cad-b0ad-81613838ee19"/>
+				<text><![CDATA[JK]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="263" y="0" width="193" height="15" forecolor="#736343" uuid="70add12c-7fc8-4a33-80e3-d097d10fb6ff"/>
+				<text><![CDATA[Alamat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="456" y="0" width="114" height="15" forecolor="#736343" uuid="a51a559c-4a04-4ab9-8fae-d2ba618ecaa8"/>
+				<text><![CDATA[No HP]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="570" y="0" width="114" height="15" forecolor="#736343" uuid="46452b9e-a063-4895-90ab-98ee982f848d"/>
+				<text><![CDATA[Jabatan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="684" y="0" width="114" height="15" forecolor="#736343" uuid="72b611b0-64dd-4104-a13d-94cc81ffebf7"/>
+				<text><![CDATA[Golongan]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="802" height="15" uuid="fcab9be9-6404-4276-aa12-12323e4873c0"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="0" y="0" width="114" height="15" uuid="427c6776-0aa9-4e7b-bd02-d82d854b0546"/>
+					<textFieldExpression><![CDATA[$F{karyawan_nama}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="dd MMMMM yyyy">
+					<reportElement style="Detail" x="114" y="0" width="114" height="15" uuid="22493427-8f12-405f-a4cf-2cca227ab210"/>
+					<textFieldExpression><![CDATA[$F{karyawan_tgl_lahir}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="228" y="0" width="35" height="15" uuid="6008ed0a-b739-4c4e-bd82-d66da83b1450"/>
+					<textFieldExpression><![CDATA[$F{karyawan_jk}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="263" y="0" width="193" height="15" uuid="fa62d419-3456-435c-9d99-01b51354f11d"/>
+					<textFieldExpression><![CDATA[$F{karyawan_alamat}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="456" y="0" width="114" height="15" uuid="d1198e70-4914-4160-a3ca-51f38aed142b"/>
+					<textFieldExpression><![CDATA[$F{karyawan_noHP}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="570" y="0" width="114" height="15" uuid="1f27f4fc-47ec-419d-865f-9743c7f1bcaa"/>
+					<textFieldExpression><![CDATA[$F{karyawan_jabatan}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="684" y="0" width="114" height="15" uuid="f1a9a9f3-a51b-412d-b982-d5613ec773f2"/>
+					<textFieldExpression><![CDATA[$F{karyawan_golongan}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="6" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="802" height="1" uuid="6f2eea5a-dc66-4af6-8884-bef9044ba1d5"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="-21" y="1" width="843" height="24" forecolor="#D0B48E" backcolor="#F2EBDF" uuid="bc7ac04c-7bf6-4036-b1b5-a76e2209b128"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="783" y="1" width="40" height="20" forecolor="#736343" uuid="0e4c5546-023f-4f97-b5e0-27c3a862ef38"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="703" y="1" width="80" height="20" forecolor="#736343" uuid="a077aa45-596c-4197-9b76-0e1ad177855c"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="22" y="1" width="197" height="20" forecolor="#736343" uuid="834ebb46-520a-4838-a78e-b507ef79ee56"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
